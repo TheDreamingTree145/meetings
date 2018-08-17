@@ -13,7 +13,9 @@ class Project extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    projects: state.projects
+    project: state.project,
+    meetings: state.meetings,
+    students: state.students
   }
 }
 

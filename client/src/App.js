@@ -12,7 +12,6 @@ class App extends Component {
 
   componentDidMount() {
     this.props.fetchStudents()
-    this.props.fetchMeetings()
   }
 
   render() {
