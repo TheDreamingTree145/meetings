@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
   def show
-    @project = Project.find(params[:id])
-    render jsonapi: Project.all
+    @project = Project.friendly.find(params[:id])
+    render json: ProjectSerializer.new(@project).serialized_json
   end
 end
