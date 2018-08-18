@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ProjectTable from '.../components/projectTable';
 class Project extends Component {
 
   render() {
     return(
       <div>
-        Hello World
+        <ProjectTable
+          project={this.props.project}
+          meetings={this.props.meetings}
+          students={this.props.students}
+        />
       </div>
     )
   }
