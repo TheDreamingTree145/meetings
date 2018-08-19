@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ProjectTable from '.../components/projectTable';
+import ProjectTable from '../../components/projectTable';
 class Project extends Component {
 
   render() {

@@ -17,9 +17,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Search />
+        <Search history={this.props.history}/>
         <Switch>
-          <Route exact path='/projects/:id' component={Project} />
+          <Route path='/projects/:id' component={Project} />
         </Switch>
       </div>
     );

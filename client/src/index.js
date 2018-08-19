@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 import App from './App';
 import 'semantic-ui-css/semantic.min.css';
+import history from './history';
 import rootReducer from './reducers/index';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -16,8 +17,8 @@ const store = createStore(rootReducer, {}, composeEnhancers(
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <App />
+    <BrowserRouter >
+      <App history={history} />
     </BrowserRouter>
   </Provider>,
   document.getElementById('root')

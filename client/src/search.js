@@ -5,6 +5,7 @@ import options from './constants/options';
 import { fetchProject } from './actions/projects/project';
 import { fetchMeetings } from './actions/meetings/meetings';
 
+
 class Search extends Component {
   constructor(props) {
     super(props);
@@ -26,6 +27,8 @@ class Search extends Component {
   handleOnSubmit = (term) => {
     this.props.fetchProject(term)
     this.props.fetchMeetings(term)
+    this.props.history.push('/projects/' + term)
+
   }
 
   render() {
