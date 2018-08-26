@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Header, Table } from 'semantic-ui-react';
-import { meetingStudents } from '.././projectFunctions';
+import meetingStudentsFunc from './../projectFunctions';
 
 const ProjectTable = (props) => {
-  const meetingStudents = this.props.meetingStudents(props)
+  const meetingStudent = meetingStudentsFunc(props)
+  debugger;
+
   return (
     <Table celled padded>
       <Table.Header>
@@ -18,6 +20,7 @@ const ProjectTable = (props) => {
       </Table.Body>
     </Table>
   )
+
 }
 
 
