@@ -4,6 +4,7 @@ import { Form, Button, Dropdown } from 'semantic-ui-react';
 import options from './constants/options';
 import { fetchProject } from './actions/projects/project';
 import { fetchMeetings } from './actions/meetings/meetings';
+import history from './history';
 
 
 class Search extends Component {
@@ -27,8 +28,7 @@ class Search extends Component {
   handleOnSubmit = (term) => {
     this.props.fetchProject(term)
     this.props.fetchMeetings(term)
-    this.props.history.push('/projects/' + term)
-
+    history.push('/projects/' + term)
   }
 
   render() {

@@ -3,9 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import Search from './search'
 import Project from './containers/projects/project';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import { fetchStudents } from './actions/students/students';
-import { fetchMeetings } from './actions/meetings/meetings';
 import { connect } from 'react-redux';
 
 class App extends Component {
@@ -17,13 +16,26 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Search history={this.props.history}/>
+        <Search />
         <Switch>
-          <Route path='/projects/:id' component={Project} />
+          <Route exact path='/projects/rails' render={props => <Project {...props}
+            project={this.props.project}
+            meetings={this.props.meetings}
+            students={this.props.students}
+            />}
+          />
         </Switch>
       </div>
     );
   }
 }
 
-export default connect(null, { fetchStudents, fetchMeetings })(App);
+const mapStateToProps = (state) => {
+  return {
+    project: state.project,
+    meetings: state.meetings,
+    students: state.students
+  }
+}
+
+export default connect(mapStateToProps, { fetchStudents })(App);
