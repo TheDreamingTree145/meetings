@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Form, Button, Dropdown } from 'semantic-ui-react';
 import options from './constants/options';
-import { fetchProject } from './actions/projects/project';
+import { fetchProjectMeetings } from './actions/projects/project';
 import { fetchMeetings } from './actions/meetings/meetings';
 import history from './history';
 
@@ -26,8 +26,7 @@ class Search extends Component {
   }
 
   handleOnSubmit = (term) => {
-    this.props.fetchProject(term)
-    this.props.fetchMeetings(term)
+    this.props.fetchProjectMeetings(term)
     history.push('/projects/' + term)
   }
 
@@ -42,4 +41,5 @@ class Search extends Component {
   }
 }
 
-export default connect(null, { fetchProject, fetchMeetings })(Search);
+
+export default connect(null, { fetchProjectMeetings })(Search);

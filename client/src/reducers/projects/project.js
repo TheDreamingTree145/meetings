@@ -1,7 +1,18 @@
-export default function(state = [], action) {
+import _ from 'lodash';
+
+export default function(state = {
+  meetings: [],
+  students: []
+}, action) {
   switch (action.type) {
     case 'FETCH_PROJECT_FULFILLED':
-      return [...state, action.payload.data]
+    const meetings = action.payload.data.included.filter(el => el.type === 'meeting')
+    const students = action.payload.data.included.filter(el => el.type === 'student')
+      return Object.assign({}, state, {
+        name: action.payload.data.data.attributes.name,
+        meetings: meetings,
+        students: students
+      })
     case 'FETCH_PROJECT_PENDING':
       return state;
     case 'FETCH_PROJECT_REJECTED':

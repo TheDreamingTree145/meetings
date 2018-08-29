@@ -8,9 +8,6 @@ class ProjectTable extends Component {
   }
 
   render() {
-    
-    const meetingStudent = meetingStudentsFunc(this.props)
-    const tBody = createTableBody(meetingStudent)
 
     return (
       <Table celled padded>

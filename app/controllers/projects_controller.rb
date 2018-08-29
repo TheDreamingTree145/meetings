@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.friendly.find(params[:id])
-    render json: ProjectSerializer.new(@project).serialized_json
+    options = {include: [:meetings, :students]}
+    render json: ProjectSerializer.new(@project, options).serialized_json
   end
 end
