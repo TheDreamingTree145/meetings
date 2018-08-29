@@ -1,4 +1,20 @@
-export default function(props) {
+import React from 'react';
+import { Table } from 'semantic-ui-react';
+
+
+export function createTableBody(meetingStudents) {
+  meetingStudents.map((el) => {
+    return(
+      <Table.Row>
+        <Table.Cell>
+
+        </Table.Cell>
+      </Table.Row>
+    )
+  })
+}
+
+export function meetingStudentsFunc(props) {
   if (props.meetings[0] && props.meetings[0].data.length) {
 
     const meetingStudentsArr = []

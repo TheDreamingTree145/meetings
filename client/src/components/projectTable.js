@@ -1,26 +1,32 @@
 import React, { Component } from 'react';
 import { Header, Table } from 'semantic-ui-react';
-import meetingStudentsFunc from './../projectFunctions';
+import { meetingStudentsFunc, createTableBody } from './../projectFunctions';
 
-const ProjectTable = (props) => {
-  const meetingStudent = meetingStudentsFunc(props)
-  debugger;
+class ProjectTable extends Component {
+  constructor(props) {
+    super(props)
+  }
 
-  return (
-    <Table celled padded>
-      <Table.Header>
-        <Table.Row>
-          <Table.HeaderCell singleLine>Date</Table.HeaderCell>
-          <Table.HeaderCell singleLine>Student</Table.HeaderCell>
-          <Table.HeaderCell singleLine>Issue</Table.HeaderCell>
-        </Table.Row>
-      </Table.Header>
+  render() {
+    
+    const meetingStudent = meetingStudentsFunc(this.props)
+    const tBody = createTableBody(meetingStudent)
 
-      <Table.Body>
-      </Table.Body>
-    </Table>
-  )
+    return (
+      <Table celled padded>
+        <Table.Header>
+          <Table.Row>
+            <Table.HeaderCell singleLine>Date</Table.HeaderCell>
+            <Table.HeaderCell singleLine>Student</Table.HeaderCell>
+            <Table.HeaderCell singleLine>Issue</Table.HeaderCell>
+          </Table.Row>
+        </Table.Header>
 
+        <Table.Body>
+        </Table.Body>
+      </Table>
+    )
+  }
 }
 
 
