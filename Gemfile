@@ -12,6 +12,8 @@ gem 'puma', '~> 3.11'
 
 gem 'fast_jsonapi'
 
+gem 'friendly_id', '~> 5.2.0'
+
 gem 'rack-cors', require: 'rack/cors'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'

@@ -2,7 +2,7 @@ class MeetingsController < ApplicationController
   before_action :set_meeting, only: [:show]
 
   def index
-    @meetings = Meeting.project_meetings(3)
+    @meetings = Project.find_by_slug(params[:project_name]).meetings
     options = {include: [:student]}
     render json: MeetingSerializer.new(@meetings, options).serialized_json
   end
