@@ -14,6 +14,7 @@ class App extends Component {
   }
 
   render() {
+    if (this.props.meetings != []) {
     return (
       <div>
         <Search />
@@ -27,6 +28,13 @@ class App extends Component {
         </Switch>
       </div>
     );
+  } else {
+    return(
+      <div>
+        <Search />
+      </div>
+    )
+  }
   }
 }
 
