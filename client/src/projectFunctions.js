@@ -1,31 +1,27 @@
 import React from 'react';
 import { Table } from 'semantic-ui-react';
-
+import _ from 'lodash';
 
 export function createTableBody(meetingStudents) {
-  meetingStudents.map((el) => {
+  return meetingStudents.map((el) => {
+    const { attributes } = el
+    debugger;
     return(
-      <Table.Row>
-        <Table.Cell>
-
-        </Table.Cell>
+      <Table.Row key={el.id}>
+        <Table.Cell>{attributes.date}</Table.Cell>
+        <Table.Cell>{attributes.name}</Table.Cell>
+        <Table.Cell>{attributes.email}</Table.Cell>
+        <Table.Cell>{attributes.issue}</Table.Cell>
       </Table.Row>
     )
   })
 }
 
-export function meetingStudentsFunc(props) {
-  if (props.meetings[0] && props.meetings[0].data.length) {
-
-    const meetingStudentsArr = []
-    const meetingStudents = props.meetings[0].data.forEach(meeting => {
-      const newHash = meeting.attributes
-      const student = props.students[0].find(student => {
-        return student.id == meeting.relationships.student.data.id
-      })
-      newHash["student"] = student
-      meetingStudentsArr.push(newHash)
+export function meetingStudentsFunc(project) {
+  return project.meetings.map(meeting => {
+    const student = project.students.find(student => {
+      return student.id == meeting.attributes.student_id
     })
-    return meetingStudentsArr
-  }
+    return _.merge(meeting, student)
+  })
 }
