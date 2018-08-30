@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/stympy/faker.git
+  revision: a7c6b32138ae2deed62a0fbea423fd831f36a6d5
+  branch: master
+  specs:
+    faker (1.9.1)
+      i18n (>= 0.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -185,6 +193,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
+  faker!
   fast_jsonapi
   friendly_id (~> 5.2.0)
   google-api-client (~> 0.8)

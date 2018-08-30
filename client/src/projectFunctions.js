@@ -5,7 +5,6 @@ import _ from 'lodash';
 export function createTableBody(meetingStudents) {
   return meetingStudents.map((el) => {
     const { attributes } = el
-    debugger;
     return(
       <Table.Row key={el.id}>
         <Table.Cell>{attributes.date}</Table.Cell>

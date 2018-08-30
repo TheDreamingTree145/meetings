@@ -17,6 +17,7 @@ class ProjectTable extends Component {
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell singleLine>Date</Table.HeaderCell>
+            <Table.HeaderCell singleLine>Email</Table.HeaderCell>
             <Table.HeaderCell singleLine>Student</Table.HeaderCell>
             <Table.HeaderCell singleLine>Issue</Table.HeaderCell>
           </Table.Row>

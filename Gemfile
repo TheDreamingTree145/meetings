@@ -10,6 +10,8 @@ gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
 gem 'fast_jsonapi'
 
 gem 'friendly_id', '~> 5.2.0'
