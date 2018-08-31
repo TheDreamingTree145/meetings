@@ -8,7 +8,6 @@ import { fetchStudents } from './actions/students/students';
 import { connect } from 'react-redux';
 
 class App extends Component {
-
   componentDidMount() {
     this.props.fetchStudents()
   }
@@ -18,7 +17,7 @@ class App extends Component {
       <div>
         <Search />
         <Switch>
-          <Route exact path='/projects/rails' render={props => <Project {...props}
+          <Route exact path='/projects/:id' render={props => <Project {...props}
             project={this.props.project}
             meetings={this.props.meetings}
             students={this.props.students}
@@ -32,9 +31,11 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    project: state.project,
-    meetings: state.meetings,
-    students: state.students
+    project: {
+      name: state.project.name,
+      meetings: state.project.meetings,
+      students: state.project.meetings
+    }
   }
 }
 

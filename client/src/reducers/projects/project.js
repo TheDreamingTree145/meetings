@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
 export default function(state = {
+  name: null,
   meetings: [],
   students: []
 }, action) {
