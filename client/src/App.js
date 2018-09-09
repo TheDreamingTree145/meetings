@@ -34,7 +34,7 @@ const mapStateToProps = (state) => {
     project: {
       name: state.project.name,
       meetings: state.project.meetings,
-      students: state.project.meetings
+      students: state.project.students
     }
   }
 }
