@@ -18,7 +18,7 @@ class ProjectTable extends Component {
         const dateToFormat = attributes.date
         return(
           <Table.Row key={attributes.index}>
-            <Table.Cell><Moment tz='America/Detroit'>{dateToFormat}</Moment></Table.Cell>
+            <Table.Cell><Moment parse="YYYY-MM-DD" tz="America/Toronto">{dateToFormat}</Moment></Table.Cell>
             <Table.Cell>{attributes.name}</Table.Cell>
             <Table.Cell>{attributes.email}</Table.Cell>
             <Table.Cell>{attributes.issue}</Table.Cell>
